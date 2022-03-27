@@ -1,0 +1,17 @@
+@import url(./head.scss);
+
+$body-color: red;
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+
+body {
+  background-image: url("../assets/img/img.jpg");
+  font-family: "Roboto";
+
+  div {
+    background-color: $body-color;
+  }
+}
