@@ -1,4 +1,4 @@
-@import url(./head.scss);
+@import url(./image.scss);
 
 $body-color: red;
 
@@ -8,7 +8,7 @@ $body-color: red;
 }
 
 body {
-  background-image: url("../assets/img/img.jpg");
+  background-image: url(../assets/img/img.jpg);
   font-family: "Roboto";
 
   div {

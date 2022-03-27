@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-let htmlPageNames = ["a", "test"];
+let htmlPageNames = ["test"];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     inject: true,
@@ -24,6 +24,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
+    hot: true,
   },
   optimization: {
     splitChunks: {
