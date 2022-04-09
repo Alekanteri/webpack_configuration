@@ -1,15 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let htmlPageNames = ["test"];
-let multipleHtmlPlugins = htmlPageNames.map(name => {
+let multipleHtmlPlugins = htmlPageNames.map((name) => {
   return new HtmlWebpackPlugin({
     inject: true,
     template: `./src/html/${name}.html`,
     filename: `${name}.html`,
-    chunks: ["main"]
-  })
+    chunks: ["main"],
+  });
 });
 
 module.exports = {
@@ -21,17 +21,6 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
-  devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
-    hot: true,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
-  },
-  mode: "development",
   module: {
     rules: [
       {
@@ -43,11 +32,11 @@ module.exports = {
         test: /\.(s(a|c)ss)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
-          'sass-loader'
-        ]
+          "css-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.html$/i,
@@ -74,13 +63,13 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "css/[hash]_[name].css"
+      filename: "css/[hash]_[name].css",
     }),
     new HtmlWebpackPlugin({
       inject: true,
       template: "./src/html/index.html",
       filename: "index.html",
-      chunks: ["main"]
+      chunks: ["main"],
     }),
-  ].concat(multipleHtmlPlugins)
+  ].concat(multipleHtmlPlugins),
 };

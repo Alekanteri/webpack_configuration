@@ -1,24 +1,34 @@
-# Webpack Configuration
- 
+<h1 align="center">Webpack Configuration</h1>
+
+<h2 align="center">
+
+![](https://img.shields.io/github/languages/count/Alekanteri/webpack_configuration)
+![](https://img.shields.io/github/languages/top/Alekanteri/webpack_configuration)
+![](https://img.shields.io/github/followers/Alekanteri?style=social)
+
+</h2>
+
 ## Finalize
 
-1. Add developer mode and production mode;
-2. If necessary, add support for more files;
-3. Optimize Configuration;
-4. Write configuration in *package.json*
+1. If necessary, add support for more files;
+2. Optimize Configuration
 
-***
+---
 
 ## Scripts
 
 ### `yarn start`
 
-Once collects files in the dist folder
+```json
+"webpack serve --open --config webpack.dev.js"
+```
 
-### `yarn watch`
+Open local server in development mode. Webpack listens for file changes and changes the content on the page automatically.
 
-Monitors the changes in the main files, and rebuilds the resulting folder
+### `yarn build`
 
-### `yarn serve`
+```json
+"webpack --config webpack.prod.js"
+```
 
-Creates a local server, and performs the same function as `yarn watch`. !No hot reload yet!
+Creates a _./dist_ folder with final minified files
